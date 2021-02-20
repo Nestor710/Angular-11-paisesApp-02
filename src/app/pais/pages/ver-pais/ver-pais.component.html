@@ -1,0 +1,48 @@
+<div *ngIf="!pais; else divPais" class="alert alert-info">
+    Espere por favor...
+</div>
+
+<ng-template #divPais class="template">
+
+    <div class="row">
+        <div class="col-12">
+            <h1>Pais: <small>{{ pais.name }}</small></h1>
+        </div>
+    </div>
+    <hr style="margin-top: 2.5px;">
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img class="img-thumbnail" [src]="pais.flag" [alt]="pais.name">
+        </div>
+
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Población: </strong> {{ pais.population | number }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Capital: </strong>{{ pais.capital }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Región: </strong>{{ pais.region }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Idioma: </strong>{{ pais.languages[0].nativeName }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Moneda: </strong>{{ pais.currencies[0].name }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <h3>Paises fronterizos</h3>
+    <div class="row">
+        <div class="col">
+            <span *ngFor="let fronteras of pais.borders" class="badge bg-primary mr-1">{{ fronteras }}</span>
+        </div>
+    </div>
+
+</ng-template>

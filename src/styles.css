@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+.small-flag {
+    width: 50px;
+}
+
+.template {
+    padding: 50px;
+}
+
+.mr-1 {
+    margin-right: 5px;
+}
+
+.list-group {
+    border: 1px solid rgb(70, 69, 69);
+}

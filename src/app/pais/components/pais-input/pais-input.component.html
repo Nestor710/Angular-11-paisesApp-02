@@ -1,0 +1,5 @@
+<div class="col animate__animated animate__headShake">
+    <form (ngSubmit)="buscar()" autocomplete="off">
+        <input class="form-control" type="text" [(ngModel)]="termino" (input)="teclaPresionada()" name="termino" [placeholder]="placeholder">
+    </form>
+</div>
